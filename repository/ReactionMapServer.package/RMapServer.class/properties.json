@@ -1,0 +1,16 @@
+{
+	"category" : "ReactionMapServer",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Current" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"teapot",
+		"mongo",
+		"random" ],
+	"name" : "RMapServer",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
