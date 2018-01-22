@@ -4,7 +4,6 @@ baseline: spec
 	spec
 		for: #common
 		do: [ spec
-				package: 'RMapServer' with: [ spec requires: #('MongoTalk' 'Teapot') ];
 				configuration: 'MongoTalk'
 					with: [ spec
 						versionString: #stable;
@@ -13,5 +12,6 @@ baseline: spec
 					with: [ spec
 						versionString: #stable;
 						repository: 'http://smalltalkhub.com/mc/zeroflag/Teapot/main/' ];
-				group: 'default' with: #('RMapServer');
+				package: 'ReactionMapServer' with: [ spec requires: #('MongoTalk' 'Teapot') ];
+				group: 'default' with: #('ReactionMapServer');
 				yourself ]
