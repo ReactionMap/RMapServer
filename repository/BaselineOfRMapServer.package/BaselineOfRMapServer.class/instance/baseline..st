@@ -4,10 +4,7 @@ baseline: spec
 	spec
 		for: #common
 		do: [ spec
-				package: 'RMapServer'
-					with: [ spec
-						repository: 'github://ReactionMap/RMapServer/repository';
-						requires: #('MongoTalk' 'Teapot') ];
+				package: 'RMapServer' with: [ spec requires: #('MongoTalk' 'Teapot') ];
 				configuration: 'MongoTalk'
 					with: [ spec
 						versionString: #stable;
