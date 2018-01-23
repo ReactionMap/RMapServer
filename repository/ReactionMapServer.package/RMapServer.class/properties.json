@@ -1,16 +1,17 @@
 {
-	"category" : "ReactionMapServer",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		"Current" ],
 	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "ReactionMapServer",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Current"
+	],
 	"instvars" : [
 		"teapot",
 		"mongo",
-		"random" ],
+		"random"
+	],
 	"name" : "RMapServer",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

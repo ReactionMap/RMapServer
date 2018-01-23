@@ -95,7 +95,7 @@ RMap.update = function () {
 	}
 	for (var i = 0; i < RMap.rmaps.length; i++) {
 		var item = document.createElement("li");
-		var content = RMap.rmaps[i].meta.name.slice(0,-5);
+		var content = RMap.rmaps[i].meta.name;
 		item.style.cursor = "pointer";
 		item.innerText = content;
 		item.textContent = content;

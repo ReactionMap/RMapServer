@@ -1,4 +1,4 @@
-teapot
+initialize-release
 initializeTeapot
 	"self current stop; initializeTeapot; start"
 

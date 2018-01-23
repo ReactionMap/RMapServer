@@ -1,23 +1,34 @@
 {
+	"instance" : {
+		"selectExtrasAll:" : "tomooda 3/16/2017 07:37",
+		"indexPage" : "tomooda 1/23/2018 14:48",
+		"readCommandlineFrom:into:" : "tomooda 1/23/2018 13:52",
+		"initialize" : "tomooda 3/14/2017 12:48",
+		"readGrrmFrom:into:" : "tomooda 1/23/2018 13:55",
+		"readParamsFrom:into:" : "tomooda 1/23/2018 13:55",
+		"createMetaNamed:from:" : "tomooda 1/23/2018 14:44",
+		"search:" : "tomooda 1/23/2018 13:59",
+		"selectMeta:" : "tomooda 3/15/2017 12:10",
+		"mongo" : "tomooda 3/13/2017 16:03",
+		"stop" : "tomooda 3/13/2017 16:30",
+		"stableEQs:from:" : "tomooda 1/23/2018 14:43",
+		"add:named:ifFailed:" : "tomooda 1/23/2018 13:47",
+		"initializeTeapot" : "tomooda 3/15/2017 07:54",
+		"readAtomsFrom:into:" : "tomooda 1/23/2018 13:54",
+		"at:" : "tomooda 3/16/2017 07:16",
+		"mongo:" : "tomooda 3/13/2017 20:05",
+		"query:" : "tomooda 3/14/2017 18:31",
+		"readFile:" : "tomooda 1/23/2018 14:15",
+		"get:" : "tomooda 3/15/2017 12:05",
+		"readDirectory:" : "tomooda 1/23/2018 14:14",
+		"addExtrasAll:" : "tomooda 3/16/2017 07:00",
+		"start" : "tomooda 3/13/2017 16:30",
+		"mongoExtras:" : "tomooda 3/16/2017 06:44"
+	},
 	"class" : {
 		"current" : "tomooda 3/13/2017 16:31",
-		"flushCurrent" : "tomooda 3/13/2017 15:35",
+		"stop" : "tomooda 3/13/2017 15:34",
 		"start" : "tomooda 3/13/2017 15:33",
-		"stop" : "tomooda 3/13/2017 15:34" },
-	"instance" : {
-		"add:named:ifFailed:" : "tomooda 3/16/2017 07:00",
-		"addExtrasAll:" : "tomooda 3/16/2017 07:00",
-		"at:" : "tomooda 3/16/2017 07:16",
-		"get:" : "tomooda 3/15/2017 12:05",
-		"indexPage" : "tomooda 3/15/2017 12:29",
-		"initialize" : "tomooda 3/14/2017 12:48",
-		"initializeTeapot" : "tomooda 3/15/2017 07:54",
-		"mongo" : "tomooda 3/13/2017 16:03",
-		"mongo:" : "tomooda 3/13/2017 20:05",
-		"mongoExtras:" : "tomooda 3/16/2017 06:44",
-		"query:" : "tomooda 3/14/2017 18:31",
-		"search:" : "tomooda 3/15/2017 12:07",
-		"selectExtrasAll:" : "tomooda 3/16/2017 07:37",
-		"selectMeta:" : "tomooda 3/15/2017 12:10",
-		"start" : "tomooda 3/13/2017 16:30",
-		"stop" : "tomooda 3/13/2017 16:30" } }
+		"flushCurrent" : "tomooda 3/13/2017 15:35"
+	}
+}
