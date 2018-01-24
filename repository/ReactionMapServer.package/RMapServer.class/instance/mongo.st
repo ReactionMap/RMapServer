@@ -1,7 +1,4 @@
+private-mongo
 mongo
-mongo
-	mongo isNil
-		ifTrue: [ mongo := Mongo default ].
-	mongo isAvailable not
-		ifTrue: [ mongo open ].
+	self ensureMongo.
 	^ mongo

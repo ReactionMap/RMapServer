@@ -1,4 +1,4 @@
-mongo
+private-mongo
 readAtomsFrom: aStream into: aDictionary
 	| atoms |
 	aStream next.

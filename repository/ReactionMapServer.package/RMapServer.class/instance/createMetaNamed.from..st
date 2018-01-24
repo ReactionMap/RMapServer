@@ -1,4 +1,4 @@
-mongo
+private-mongo
 createMetaNamed: aString from: aDictionary
 	| meta |
 	meta := Dictionary new.

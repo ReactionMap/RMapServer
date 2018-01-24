@@ -1,4 +1,4 @@
-mongo
+private-mongo
 readCommandlineFrom: aStream into: aDictionary
 	| commandline |
 	commandline := aStream next substrings: '/'.

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "Object",
+	"super" : "ComposableModel",
 	"category" : "ReactionMapServer",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -10,7 +10,14 @@
 	"instvars" : [
 		"teapot",
 		"mongo",
-		"random"
+		"db",
+		"collection",
+		"extra",
+		"random",
+		"portLabel",
+		"portField",
+		"startStopButton",
+		"rmapList"
 	],
 	"name" : "RMapServer",
 	"type" : "normal"

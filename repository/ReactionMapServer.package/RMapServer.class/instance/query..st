@@ -1,4 +1,4 @@
-private
+private-teapot
 query: aTeaRequest
 	| url query |
 	url := aTeaRequest url.

@@ -1,4 +1,4 @@
-mongo
+private-mongo
 readParamsFrom: aStream into: aDictionary
 	aStream next.
 	[ aStream atEnd ]

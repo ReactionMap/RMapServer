@@ -1,4 +1,4 @@
-mongo
+private-mongo
 add: aDictionary named: aString ifFailed: errorBlock
 	| rmap |
 	(aDictionary includesKey: 'grrm')

@@ -1,4 +1,4 @@
-mongo
+private-mongo
 stableEQs: anInteger from: aDictionary
 	| eqs |
 	eqs := SortedCollection sortBlock: [ :less :more | (less at: 'energy') <= (more at: 'energy') ].

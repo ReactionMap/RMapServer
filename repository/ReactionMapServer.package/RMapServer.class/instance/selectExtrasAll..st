@@ -1,4 +1,4 @@
-private
+private-mongo
 selectExtrasAll: anArrayOfOID
 	^ Array
 		new: anArrayOfOID size * 100

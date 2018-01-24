@@ -1,4 +1,4 @@
-private
+private-mongo
 addExtrasAll: anArrayOfDictionary
 	| oids |
 	oids := Array new writeStream.
