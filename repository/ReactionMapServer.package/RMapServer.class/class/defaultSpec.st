@@ -6,10 +6,11 @@ defaultSpec
 			c
 				newRow: [ :r | 
 					r
-						add: #portLabel;
+						add: #portLabel width: 50;
 						add: #portField;
-						add: #startStopButton;
-						yourself ];
+						add: #startStopButton width: 80;
+						yourself ]
+					height: 25;
 				newRow: [ :r | 
 					r
 						add: #rmapList;
