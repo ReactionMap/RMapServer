@@ -67,11 +67,11 @@ RMapServer can be accessed by either a web browser or RmapViewer.
 4.1. Web browser
 
 You can access the RMapServer by a web browser.
-Please open http://localhost:1701/ to get a search page below.
+Please open http://localhost:1701/ to get the search page below.
 
 ![search page](client-webbrowser.png)
 
-Please type in a query by specifying name and/or grrm commands and/or elements and quantity of the compound.
+Please type in a query by specifying name and/or grrm commands and/or elements and quantity in the compound of your concern.
 
 4.2. RMapViewer
 
