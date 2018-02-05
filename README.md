@@ -60,5 +60,23 @@ If you don't have a mongo DB process running on the local machine, you will have
 
 ![open-failure](Open-failure.png)
 
+4. Using clients
+
+RMapServer can be accessed by either a web browser or RmapViewer.
+
+4.1. Web browser
+
+You can access the RMapServer by a web browser.
+Please open http://localhost:1701/ to get a search page below.
+
+![search page](client-webbrowser.png)
+
+Please type in a query by specifying name and/or grrm commands and/or elements and quantity of the compound.
+
+4.2. RMapViewer
+
+RMapViewer 6.0 and RMapViewerS 6 has functionality to search and view reaction maps from RMapServer.
+
+![RMapViewer](client-rmapviewer.png)
 
 
