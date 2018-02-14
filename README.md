@@ -30,7 +30,7 @@ Then, please evaluate the following piece of code, and save a snapshot.
 
 ```
 Metacello new
-    repository: 'github://ReactionMap/RMapServer/repository/';
+    repository: 'github://ReactionMap/RMapServer/repository';
     baseline: 'RMapServer';
     load
 ```
