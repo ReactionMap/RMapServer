@@ -5,14 +5,11 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
-		"Current"
+		"Current",
+		"ServerClassName"
 	],
 	"instvars" : [
 		"teapot",
-		"mongo",
-		"db",
-		"collection",
-		"extra",
 		"random",
 		"portLabel",
 		"portField",

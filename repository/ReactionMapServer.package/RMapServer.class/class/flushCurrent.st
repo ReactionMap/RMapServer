@@ -5,4 +5,6 @@ flushCurrent
 		ifNotNil: [ | current |
 			current := Current.
 			Current := nil.
-			current stop ]
+			current
+				stop;
+				delete ]

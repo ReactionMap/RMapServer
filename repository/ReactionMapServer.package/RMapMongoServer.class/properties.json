@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "RMapServer",
+	"category" : "ReactionMapServer",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"mongo",
+		"collection",
+		"db",
+		"extra"
+	],
+	"name" : "RMapMongoServer",
+	"type" : "normal"
+}

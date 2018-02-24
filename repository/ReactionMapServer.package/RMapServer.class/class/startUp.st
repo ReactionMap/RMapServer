@@ -2,4 +2,7 @@ snapshotting
 startUp
 	self
 		flushCurrent;
-		open
+		current.
+	Smalltalk isInteractive
+		ifTrue: [ self open ]
+		ifFalse: [ self start ]

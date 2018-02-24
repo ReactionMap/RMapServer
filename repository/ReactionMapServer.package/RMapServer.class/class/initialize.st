@@ -1,3 +1,4 @@
 class initialization
 initialize
-	SessionManager default registerToolClassNamed: self name
+	SessionManager default registerToolClassNamed: self name.
+	ServerClassName := #RmapMongoServer

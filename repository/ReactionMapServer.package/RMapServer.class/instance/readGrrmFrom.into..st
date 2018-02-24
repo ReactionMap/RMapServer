@@ -1,4 +1,4 @@
-private-mongo
+private
 readGrrmFrom: aString into: aDictionary
 	| grrm |
 	grrm := aString lines readStream.

@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "RMapServer",
+	"category" : "ReactionMapServer",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"RepositoryPath"
+	],
+	"instvars" : [
+		"rmaps"
+	],
+	"name" : "RMapDirectoryServer",
+	"type" : "normal"
+}

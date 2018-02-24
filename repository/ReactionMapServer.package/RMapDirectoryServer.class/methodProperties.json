@@ -1,0 +1,18 @@
+{
+	"instance" : {
+		"updateRMapList" : "tomooda 2/24/2018 21:10",
+		"readFile:" : "tomooda 2/24/2018 21:13",
+		"at:" : "tomooda 2/24/2018 20:40",
+		"rmaps" : "tomooda 2/24/2018 20:31",
+		"updateFromRepository" : "tomooda 2/24/2018 20:34",
+		"jsonMatch:to:" : "tomooda 2/24/2018 20:47",
+		"repositoryPath" : "tomooda 2/24/2018 19:56",
+		"removeAt:" : "tomooda 2/24/2018 21:06",
+		"selectMeta:" : "tomooda 2/24/2018 20:31"
+	},
+	"class" : {
+		"repositoryPath" : "tomooda 2/24/2018 19:55",
+		"defaultRepositoryPath" : "tomooda 2/24/2018 19:59",
+		"repositoryPath:" : "tomooda 2/24/2018 19:47"
+	}
+}

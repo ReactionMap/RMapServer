@@ -1,3 +1,3 @@
 sole instance
 current
-	^ Current ifNil: [ Current := self new ]
+	^ Current ifNil: [ Current := (Smalltalk at: ServerClassName) new ]
