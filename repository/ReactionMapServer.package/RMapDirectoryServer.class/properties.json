@@ -8,7 +8,8 @@
 		"RepositoryPath"
 	],
 	"instvars" : [
-		"rmaps"
+		"rmaps",
+		"updateProcess"
 	],
 	"name" : "RMapDirectoryServer",
 	"type" : "normal"
