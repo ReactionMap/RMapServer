@@ -39,7 +39,10 @@ Metacello new
 
 3.1. GUI mode
 
-Please open the RMapServer. A window that looks like below will open.
+Please open Pharo.
+If you downloaded from the release page, please execute the ```RMapServer-ui``` command found in the RMapServer's installation directory.
+
+A window that looks like below will open.
 
 ![open-success](Open-success.png)
 
@@ -67,28 +70,29 @@ If you don't have a mongo DB process running on the local machine, you will have
 
 3.2. Headless mode
 
-You can start a RMapServer in a headless mode with "rmapserver" command. It takes the following form.
+You can start a RMapServer in a headless mode with "rmapserver" command.
+If you downloaded from the release page, it takes the following form.
 
 ```
-./pharo Pharo.image rmapserver <mode> <option>
+RMapServer rmapserver <mode> <option>
 ```
 
 For example, a mongo-based RMapServer can be started by
 
 ```
-./pharo Pharo.image rmapserver mongo
+./RMapServer rmapserver mongo
 ```
 
 You can launch a directory-based RMapServer with the default repository:
 
 ```
-./pharo Pharo.image rmapserver directory
+./RMapServer rmapserver directory
 ```
 
 or you can also specify the repository directory.
 
 ```
-./pharo Pharo.image rmapserver directory /usr/local/rmapfiles
+./RMapServer rmapserver directory /usr/local/rmapfiles
 ```
 
 Headless mode does not provide GUI for managing the contents of the repository.
