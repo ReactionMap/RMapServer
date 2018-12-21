@@ -4,14 +4,8 @@ baseline: spec
 	spec
 		for: #common
 		do: [ spec
-				configuration: 'MongoTalk'
-					with: [ spec
-						versionString: #stable;
-						repository: 'github://pharo-nosql/mongotalk/mc' ];
-				configuration: 'Teapot'
-					with: [ spec
-						versionString: #stable;
-						repository: 'http://smalltalkhub.com/mc/zeroflag/Teapot/main/' ];
+				baseline: 'MongoTalk' with: [ spec repository: 'github://pharo-nosql/mongotalk/mc' ];
+				baseline: 'Teapot' with: [ spec repository: 'github://zeroflag/Teapot/source' ];
 				package: 'ReactionMapServer' with: [ spec requires: #('MongoTalk' 'Teapot') ];
 				group: 'default' with: #('ReactionMapServer');
 				yourself ]
