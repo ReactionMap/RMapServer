@@ -133,7 +133,7 @@ RMapServer >> defaultPort [
 
 { #category : #'teapot-api' }
 RMapServer >> get: aDictionary [
-	^ self at: (aDictionary at: '_id' ifAbsent: [ 0 ]) asInteger
+	^ self at: (aDictionary at: '_id' ifAbsent: [ 0 ])
 ]
 
 { #category : #'ui operations' }
