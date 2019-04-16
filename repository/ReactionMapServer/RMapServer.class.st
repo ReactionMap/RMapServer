@@ -288,7 +288,7 @@ RMap.query = function () {
 	if (RMap.dom.atom3.element.value && parseInt(RMap.dom.atom3.qt.value))
 		query.push("atoms."+encodeURIComponent(RMap.dom.atom3.element.value)+"="+parseInt(RMap.dom.atom3.qt.value));
 	var req = new XMLHttpRequest();
-	req.open("GET", "/api/search?"+query.join("&"));
+	req.open("GET", "api/search?"+query.join("&"));
 	req.onload = function () {
  		if (req.readyState == 4) {
 			if (req.status == 200) {
@@ -328,7 +328,7 @@ RMap.show = function() {
 	var content = "";
 	if (RMap.index != null) { 
 		content = RMap.rmaps[RMap.index].grrm.replace(/&/g, "&amp").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r?\n/g, "<br>");
-		RMap.dom.download.href="/api/download/"+encodeURIComponent(RMap.rmaps[RMap.index].meta.name+".rmap")+"?_id="+RMap.rmaps[RMap.index]._id;
+		RMap.dom.download.href="api/download/"+encodeURIComponent(RMap.rmaps[RMap.index].meta.name+".rmap")+"?_id="+RMap.rmaps[RMap.index]._id;
 		RMap.dom.downloadbox.style.visibility="visible";
 	}
 	RMap.dom.detail.innerHTML = content;
