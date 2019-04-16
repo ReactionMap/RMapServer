@@ -114,15 +114,53 @@ RMapServer >> at: id [
 ]
 
 { #category : #private }
+RMapServer >> createGrrm: rmap [
+	rmap
+		at: 'grrm'
+		ifAbsentPut: [ String
+				streamContents: [ :stream | 
+					stream
+						nextPutAll: '# ?/?/?';
+						lf;
+						lf;
+						lf.
+					((rmap at: 'vertices') first at: 'geometry')
+						do: [ :atom | 
+							stream
+								nextPutAll: atom first;
+								nextPutAll: '	?	?	?';
+								lf ].
+					stream
+						nextPutAll: 'OPTIONS';
+						lf ] ]
+]
+
+{ #category : #private }
 RMapServer >> createMetaNamed: aString from: aDictionary [
 	| meta |
 	meta := Dictionary new.
 	meta at: 'name' put: aString.
-	self readGrrmFrom: (aDictionary at: 'grrm') into: meta.
-	meta at: 'numEQ' put: ((aDictionary at: 'vertices') select: [ :v | (v at: 'label') first = $E ]) size.
-	meta at: 'numTS' put: ((aDictionary at: 'vertices') select: [ :v | (v at: 'label') first = $T ]) size.
-	meta at: 'numDC' put: ((aDictionary at: 'vertices') select: [ :v | (v at: 'label') first = $D ]) size.
-	meta at: 'stableEQs' put: (self stableEQs: 10 from: (aDictionary at: 'vertices')).
+	aDictionary
+		at: 'grrm'
+		ifPresent: [ :grrm | self readGrrmFrom: grrm into: meta ].
+	meta
+		at: 'numEQ'
+		put:
+			((aDictionary at: 'vertices')
+				select: [ :v | (v at: 'label') first = $E ]) size.
+	meta
+		at: 'numTS'
+		put:
+			((aDictionary at: 'vertices')
+				select: [ :v | (v at: 'label') first = $T ]) size.
+	meta
+		at: 'numDC'
+		put:
+			((aDictionary at: 'vertices')
+				select: [ :v | (v at: 'label') first = $D ]) size.
+	meta
+		at: 'stableEQs'
+		put: (self stableEQs: 10 from: (aDictionary at: 'vertices')).
 	^ meta
 ]
 
@@ -290,7 +328,7 @@ RMap.show = function() {
 	var content = "";
 	if (RMap.index != null) { 
 		content = RMap.rmaps[RMap.index].grrm.replace(/&/g, "&amp").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r?\n/g, "<br>");
-		RMap.dom.download.href="/api/download/"+encodeURIComponent(RMap.rmaps[RMap.index].meta.name)+"?_id="+RMap.rmaps[RMap.index]._id;
+		RMap.dom.download.href="/api/download/"+encodeURIComponent(RMap.rmaps[RMap.index].meta.name+".rmap")+"?_id="+RMap.rmaps[RMap.index]._id;
 		RMap.dom.downloadbox.style.visibility="visible";
 	}
 	RMap.dom.detail.innerHTML = content;
@@ -367,6 +405,11 @@ RMapServer >> initializeWidgets [
 { #category : #teapot }
 RMapServer >> isRunning [
 	^ teapot server isRunning
+]
+
+{ #category : #private }
+RMapServer >> noGrrmMessage [
+	^ 'no grrm parameters recorded'
 ]
 
 { #category : #teapot }

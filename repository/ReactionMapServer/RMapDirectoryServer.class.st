@@ -144,6 +144,7 @@ RMapDirectoryServer >> updateFromRepository [
 						and: [ rmapRef modificationTime < (self rmaps at: name) second ])
 						ifFalse: [ | json rmap |
 							json := (NeoJSONReader on: rmapRef readStream) next.
+							json at: 'grrm' ifAbsent: [self createGrrm: json].
 							rmap := Dictionary new
 								at: '_id' put: name;
 								at: 'grrm' put: (json at: 'grrm');
