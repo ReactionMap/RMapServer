@@ -13,7 +13,7 @@ Class {
 { #category : #'private-mongo' }
 RMapMongoServer >> add: aDictionary named: aString ifFailed: errorBlock [
 	| rmap |
-	aDictionary at: 'grrm' ifAbsent: [ self createGrrm: aDictionary ].
+	aDictionary at: 'grrm' ifAbsentPut: [ self createGrrm: aDictionary ].
 	rmap := aDictionary copy.
 	rmap
 		at: 'meta'

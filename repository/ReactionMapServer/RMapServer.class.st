@@ -115,24 +115,22 @@ RMapServer >> at: id [
 
 { #category : #private }
 RMapServer >> createGrrm: rmap [
-	rmap
-		at: 'grrm'
-		ifAbsentPut: [ String
-				streamContents: [ :stream | 
+	^ String
+		streamContents: [ :stream | 
+			stream
+				nextPutAll: '# ?/?/?';
+				lf;
+				lf;
+				lf.
+			((rmap at: 'vertices') first at: 'geometry')
+				do: [ :atom | 
 					stream
-						nextPutAll: '# ?/?/?';
-						lf;
-						lf;
-						lf.
-					((rmap at: 'vertices') first at: 'geometry')
-						do: [ :atom | 
-							stream
-								nextPutAll: atom first;
-								nextPutAll: '	?	?	?';
-								lf ].
-					stream
-						nextPutAll: 'OPTIONS';
-						lf ] ]
+						nextPutAll: atom first;
+						nextPutAll: '	?	?	?';
+						lf ].
+			stream
+				nextPutAll: 'OPTIONS';
+				lf ]
 ]
 
 { #category : #private }

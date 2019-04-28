@@ -44,6 +44,11 @@ RMapDirectoryServer >> delete [
 	self updateProcess
 ]
 
+{ #category : #private }
+RMapDirectoryServer >> invalidRMapFile [
+	
+]
+
 { #category : #repository }
 RMapDirectoryServer >> jsonMatch: aDictionary1 to: aDictionary2 [
 	aDictionary1
@@ -130,38 +135,37 @@ RMapDirectoryServer >> stop [
 
 { #category : #repository }
 RMapDirectoryServer >> updateFromRepository [
-	| changed |
-	changed := false.
-	self repositoryPath
-		in: [ :repo | 
-			repo isDirectory
-				ifFalse: [ repo createDirectory ].
-			(repo filesMatching: '*.rmap')
-				do: [ :rmapRef | 
-					| name |
-					name := rmapRef basenameWithoutExtension: 'rmap'.
-					((self rmaps includesKey: name)
-						and: [ rmapRef modificationTime < (self rmaps at: name) second ])
-						ifFalse: [ | json rmap |
-							json := (NeoJSONReader on: rmapRef readStream) next.
-							json at: 'grrm' ifAbsent: [self createGrrm: json].
-							rmap := Dictionary new
-								at: '_id' put: name;
-								at: 'grrm' put: (json at: 'grrm');
-								at: 'meta' put: (self createMetaNamed: name from: json);
-								yourself.
-							self rmaps
-								at: name
-								put:
-									{rmap.
-									DateAndTime now}.
-							changed := true ] ].
-			self rmaps keys asArray
-				do: [ :name | 
-					(repo / (name , '.rmap')) isFile
-						ifFalse: [ self rmaps removeKey: name ifAbsent: [  ].
-							changed := true ] ] ].
-	^ changed
+	| repo |
+	repo := self repositoryPath.
+	repo isDirectory
+		ifFalse: [ repo createDirectory ].
+	(repo filesMatching: '*.rmap')
+		do: [ :rmapRef | 
+			| name |
+			name := rmapRef basenameWithoutExtension: 'rmap'.
+			((self rmaps includesKey: name)
+				and: [ rmapRef modificationTime < (self rmaps at: name) second ])
+				ifFalse: [ [ | json rmap |
+					json := (NeoJSONReader on: rmapRef readStream) next.
+					json at: 'grrm' ifAbsentPut: [ self createGrrm: json ].
+					rmap := Dictionary new
+						at: '_id' put: name;
+						at: 'grrm' put: (json at: 'grrm');
+						at: 'meta' put: (self createMetaNamed: name from: json);
+						yourself.
+					self rmaps
+						at: name
+						put:
+							{rmap.
+							DateAndTime now} ]
+						on: Error
+						do: [ :ex | 
+							self rmaps removeKey: name ifAbsent: [  ].
+							self invalidRMapFile ] ] ].
+	self rmaps keys asArray
+		do: [ :name | 
+			(repo / (name , '.rmap')) isFile
+				ifFalse: [ self rmaps removeKey: name ifAbsent: [  ] ] ]
 ]
 
 { #category : #private }
